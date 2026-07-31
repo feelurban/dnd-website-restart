@@ -1,0 +1,41 @@
+# Keep this repository limited to the optimized static website.
+/*
+
+!/.gitignore
+!/index.html
+!/Logo D&D.svg
+!/3 awards.svg
+!/checkmark.svg
+!/tube.png
+!/case-casino-main.png
+!/case2.png
+!/Case3.png
+!/Case4.png
+!/Case5.png
+!/case6.png
+!/case7.png
+!/Draft Animation-1.png
+!/L1.png
+!/Landpic_2.png
+!/Landpic_3.png
+!/Landpic_4.png
+
+!/GIF/
+!/GIF/26d97a6df1ad76c74e95d52b3b69acd0.gif
+!/GIF/532e5628af9d54856e94c9fae9005b3f.gif
+!/GIF/5678.gif
+!/GIF/5b3950f5745e00e9789423c18faa3cfd-ezgif.com-cut.gif
+!/GIF/6008c47b9570086418ad740d3f2f2361.gif
+!/GIF/7568.gif
+!/GIF/97809p.gif
+!/GIF/ae91ed84452661.5d5edb09a5bdc.gif
+!/GIF/cf2c0bc303c251cd014c7f39b6057135.gif
+!/GIF/ff76ee3c4b7f70a18eaa5af5a83c79ac copy.gif
+!/GIF/ff76ee3c4b7f70a18eaa5af5a83c79ac copy2.gif
+!/GIF/шнпне.gif
+
+!/assets/
+/assets/*
+!/assets/cases/
+/assets/cases/*
+!/assets/cases/pulse-fitness-landing.png
