@@ -1,12 +1,12 @@
 # Current handoff
 
-- Actor: Codex
-- Updated: 2026-07-31 UTC
-- Task: Establish safe alternating work between Codex, Claude, and the user.
-- Outcome: Added a shared Git synchronization and conflict-avoidance protocol in `AI_WORKFLOW.md`, with agent entrypoints in `AGENTS.md` and `CLAUDE.md`.
-- Files changed: `AI_WORKFLOW.md`, `AGENTS.md`, `CLAUDE.md`, `HANDOFF.md`, `.gitignore`.
-- Validation: Reviewed the scoped Git diff; only the shared workflow and agent handoff files are included.
-- Remaining work: Claude must clone or open this repository, read the protocol, verify its local Git identity/authentication, and confirm a clean synchronized `main` before editing.
+- Actor: Claude
+- Updated: 2026-07-31 22:06 UTC
+- Task: Onboard Claude onto the shared repository, merge PR #1, and take over as the active writing agent.
+- Outcome: Verified remote `origin`, GitHub auth (`feelurban`, scopes `repo, read:org, gist`) and local Git identity. Confirmed PR #1 contained only `.gitignore`, `AGENTS.md`, `AI_WORKFLOW.md`, `CLAUDE.md`, `HANDOFF.md` (5 files, +393/-0), then merged it into `main` as merge commit `4a2937f`. The PR was a draft, so it was marked ready for review first, which is a precondition for merging and not a content change. No squash, no rebase, no force-push. Local `main` fast-forwarded to `4a2937f`. Codex's previous remaining-work item is now closed.
+- Files changed: `HANDOFF.md` (this section only). No site files touched; `index.html` is untouched this session.
+- Validation: `git status -sb` clean; `main` and `origin/main` both at the same commit (0 ahead / 0 behind); `gh pr view 1` reports state `MERGED`; all four protocol files present on `main`. `AI_WORKFLOW.md`, `AGENTS.md`, `CLAUDE.md` and this section read in full.
+- Remaining work / risks: Claude is now the active writer, so Codex must not write to this checkout until the role is handed back here. Branch `agent/shared-ai-workflow` was kept, not deleted. Carried over from earlier local sessions: (1) only one Web3Forms access key is wired, so submissions reach a single recipient, and a second key is still needed for the second address; (2) the `GIF/` folder and the `serviceData[].gif` fields are inert leftovers after the WebGL icon migration and can be pruned; (3) `.gitignore` is whitelist-based (`/*` plus explicit `!` entries), so any new asset must be added by name or it will never be committed.
 
 Update this section at every agent handoff. Preserve the historical project notes below unless the user asks to revise them.
 
