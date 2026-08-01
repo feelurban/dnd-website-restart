@@ -1,12 +1,12 @@
 # Current handoff
 
 - Actor: Claude
-- Updated: 2026-07-31 22:06 UTC
-- Task: Onboard Claude onto the shared repository, merge PR #1, and take over as the active writing agent.
-- Outcome: Verified remote `origin`, GitHub auth (`feelurban`, scopes `repo, read:org, gist`) and local Git identity. Confirmed PR #1 contained only `.gitignore`, `AGENTS.md`, `AI_WORKFLOW.md`, `CLAUDE.md`, `HANDOFF.md` (5 files, +393/-0), then merged it into `main` as merge commit `4a2937f`. The PR was a draft, so it was marked ready for review first, which is a precondition for merging and not a content change. No squash, no rebase, no force-push. Local `main` fast-forwarded to `4a2937f`. Codex's previous remaining-work item is now closed.
-- Files changed: `HANDOFF.md` (this section only). No site files touched; `index.html` is untouched this session.
-- Validation: `git status -sb` clean; `main` and `origin/main` both at the same commit (0 ahead / 0 behind); `gh pr view 1` reports state `MERGED`; all four protocol files present on `main`. `AI_WORKFLOW.md`, `AGENTS.md`, `CLAUDE.md` and this section read in full.
-- Remaining work / risks: Claude is now the active writer, so Codex must not write to this checkout until the role is handed back here. Branch `agent/shared-ai-workflow` was kept, not deleted. Carried over from earlier local sessions: (1) only one Web3Forms access key is wired, so submissions reach a single recipient, and a second key is still needed for the second address; (2) the `GIF/` folder and the `serviceData[].gif` fields are inert leftovers after the WebGL icon migration and can be pruned; (3) `.gitignore` is whitelist-based (`/*` plus explicit `!` entries), so any new asset must be added by name or it will never be committed.
+- Updated: 2026-08-01 01:15 UTC
+- Task: Fix the About-section logo animation on the published GitHub Pages site, which was stuck because most of its sprite frames were never committed.
+- Outcome: The About logo plays a 17-frame deceleration-spin animation (`Draft Animation-1.png` through `-17.png`, referenced from a JS array in `index.html`, not new markup). Only frame 1 was whitelisted in `.gitignore`, so frames 2-17 existed locally but were never tracked; confirmed live with `curl` that `https://feelurban.github.io/dnd-website-restart/Draft%20Animation-2.png` (and 5, 17) returned 404 while frame 1 returned 200. Added `!/Draft Animation-2.png` through `-17.png` to `.gitignore` and committed all 16 files (~3.3MB) in `574af96`.
+- Files changed: `.gitignore` (16 new allow-entries), `Draft Animation-2.png` through `Draft Animation-17.png` (new). `index.html` untouched.
+- Validation: `git status --short` before commit showed exactly `.gitignore` modified plus 16 new files added, nothing else staged. No local dev-server render check was needed since the bug was hosting-only (files already render fine locally); will re-check the live frame URLs with `curl` after this push.
+- Remaining work / risks: same three carried-over items as last handoff. (1) Web3Forms has only one recipient key wired, second address still needs a key. (2) `GIF/` folder and `serviceData[].gif` are inert post-WebGL-migration leftovers, prunable. (3) `.gitignore` is whitelist-based (`/*` plus explicit `!` entries), so any new asset needs an explicit line or it silently never gets committed, exactly as happened here.
 
 Update this section at every agent handoff. Preserve the historical project notes below unless the user asks to revise them.
 
